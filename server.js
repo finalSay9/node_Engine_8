@@ -2,6 +2,14 @@ const express = require('express')
 const app = express()
 const PORT = 3000
 
+const users = [
+    {id: 1, name: 'evan chimwaza'},
+    {id: 2, name: 'teeya tembo'}
+]
+
+app.get('/users', (req, res) => {
+    res.json(users);
+})
 
 app.get('/', (req, res) => {
     res.json({
