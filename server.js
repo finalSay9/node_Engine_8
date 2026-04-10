@@ -11,6 +11,19 @@ app.get('/users', (req, res) => {
     res.json(users);
 })
 
+app.post('/users', (req,res) => {
+    const newUser = {
+        id: users.length + 1,
+        name: req.body.name
+    };
+    if(!req.body.name) {
+        return res.status(400).send('name is required')
+    }
+
+    users.push(newUser)
+    res.status(200).json(newUser)
+})
+
 app.get('/', (req, res) => {
     res.json({
         name: 'My Server',
