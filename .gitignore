@@ -1,0 +1,8 @@
+node_modules
+dist
+build
+covarage
+*.log
+.DS_Store
+.idea
+message.txt
